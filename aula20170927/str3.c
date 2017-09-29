@@ -10,18 +10,17 @@ int main()
     printf("Entre com uma frase: \n");
     fgets(str,N,stdin);
     str[strlen(str)-1]='\0';
-    for(i=0; i<N; i++) str[i]= toupper(str[i]);
     for(i=0; str[i]!='\0'; i++)
     {
-        k=str[i];
-        if(str[i]>=65&&str[i]<=77||str[i]>='a'&&str[i]<=103)
-            str[i]=str[i]+13;
-        if(str[i]>=78&&str[i]<=90||str[i]>=104&&str[i]<=122)
-            str[i]=str[i]-13;
-        // if(str[i]>='a'&&str[i]<='h')
-        //str[i]=str[i]+13;
-        // if(str[i]>104&&str[i]<=122)
-        // str[i]-=13;
+        k=0;
+        if(str[i]>='A'&&str[i]<='M'||str[i]>=97&&str[i]<=109)
+        {
+            str[i]+=13;
+            k=1;
+        }
+        if(k==0)
+            if(str[i]>109&&str[i]<=122||str[i]>77&&str[i]<=90)
+                str[i]-=13;
     }
     printf("\n\n%s\n\n", str);
     return EXIT_SUCCESS;
