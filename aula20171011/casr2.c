@@ -10,7 +10,7 @@ int main()
     setlocale(LC_ALL, "Portuguese");
     int colunas=0, linhas=0, a=0, i=0, j=0;
     char caracteres[] = ": $ # $ : 4 b . ' :. : $ # $: 4b. ':.";
-    printf("Digite o numero de linhas e colunas (linhas,colunas): ");
+    printf("Digíte o número de linhas e colunas (linhas,colunas): ");
     scanf("%d,%d", &linhas, &colunas); getchar();
     for(i=0;i<linhas;i++)
     {
@@ -21,6 +21,6 @@ int main()
             printf("%c", caracteres[a]);
         }
     }
-    printf("\n\n\n\n\n\n");
+    printf("\n\n\n\n\n");
     return EXIT_SUCCESS;
 }
