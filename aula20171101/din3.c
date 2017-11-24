@@ -9,9 +9,9 @@ int main()
     printf("Entre com uma frase:\n");
     while(!0)
     {
-        scanf("%c", str+i);
-        str= (char *)realloc(str, sizeof(char)*1);
-        if((str+i)==NULL)
+        *(str+i)=getchar();
+        str=(char*)realloc(str, sizeof(char)*1);
+        if(*(str+i)==NULL)
         {
             printf("\n\nSem memoria suficiente\n\n");
             return EXIT_SUCCESS;
