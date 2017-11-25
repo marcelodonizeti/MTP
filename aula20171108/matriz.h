@@ -103,20 +103,47 @@ double determinante(Matriz A) {
 	}
 	return det;
 }
-Matriz comatriz(Matriz A)
-{
-    Matriz C= criarMatriz(A.lin,A.col);
-    int i, j;
-    for(i=0;i<A.lin;i++)
-        for(j=0;j<A.col;j++)
-        C.m[i][j]=cofator(A,i,j);
-    return C;
+Matriz comatriz(Matriz A){
+Matriz C=criarMatriz(A.lin,A.col);
+int i,j;
+for(i=0; i<A.lin; i++)
+    for(j=0; j<A.col; j++)
+    C.m[i][j]=cofator(A,i,j);
+return C;
 }
-Matriz adjunta(Matriz A)
+
+Matriz multiplicacao (Matriz A, Matriz B, Matriz C, int linhaA,int colunaA, int linhaB,int colunaB)
 {
-    Matriz C= comatriz (A);
-    Matriz Ct= transposta (C);
-    destruirMatriz(C);
-    return Ct;
+int i,j,k;
+double acumula;
+for(k=0; k<linhaA; k++){
+    for(j=0; j<colunaB; j++){
+        acumula=0;
+    for(i=0; i<colunaA; i++){
+    acumula= acumula+A.m[k][i]*B.m[i][j];
+    }
+    C.m[k][j]= acumula;
+    }
 }
+return C;
+}
+
+Matriz adjunta(Matriz A){
+Matriz C=comatriz(A);
+Matriz Ct=transposta(C);
+destruirMatriz(C);
+return Ct;
+}
+
+Matriz Inversa(Matriz A, Matriz Ct, double det){
+Matriz I=criarMatriz(A.lin, A.col);
+int i,j;
+for(i=0; i<A.lin;i++){
+for(j=0; j<A.col; j++){
+I.m[i][j]=(1/det)*(Ct.m[i][j]);
+}
+}
+return I;
+}
+
 #endif

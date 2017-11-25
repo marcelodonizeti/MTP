@@ -4,16 +4,16 @@
 int main()
 {
     char * str;
-    int i=0, j=0;
+    int i=0;
     str=(char*)calloc(1,sizeof(int));
     printf("Entre com uma frase:\n");
     while(!0)
     {
-        *(str+i)=getchar();
+        scanf("%c", str+i);
         str=(char*)realloc(str, sizeof(char)*1);
         if(*(str+i)==NULL)
         {
-            printf("\n\nSem memoria suficiente\n\n");
+            printf("\n\nSem memoria suficiente.\n\n");
             return EXIT_SUCCESS;
         }
         if(*(str+i)== 10)
@@ -26,6 +26,7 @@ int main()
         *(str+i)= toupper(*(str+i));
         i--;
     }
+
     printf("Frase salva na memoria (maiuscula): %s\n\n",str);
     free(str);
     return EXIT_SUCCESS;
