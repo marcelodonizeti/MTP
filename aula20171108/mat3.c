@@ -1,36 +1,30 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "matriz.h"
-
 int main()
 {
-    Matriz A,I,adjA;
+    Matriz A,inversa,adjA;
     double a;
     int ordem;
-    printf("Entre com a ordem da matriz:  ");
+    printf("Entre com a ordem da matr%cz: ",161);
     scanf("%d", &ordem);
     A=criarMatriz(ordem,ordem);
     preencherMatriz(A);
-    printf("Original: \n");
+    inversa=criarMatriz(ordem,ordem);
+    printf("Sua matr%cz:\n\n",161);
     imprimirMatriz(A);
     adjA=adjunta(A);
     a= determinante(A);
-    printf("O determinante da matriz e: %lf \n", a);
-
-    if(a!=0)
+    if(a)
     {
-        printf("A matriz A e inversivel! \n\n");
-        I=Inversa(A,adjA,a);
-        imprimirMatriz(I);
+        printf("\nMatr%cz inversa: \n\n",161);
+        inversa=Inversa(A,adjA,a);
+        imprimirMatriz(inversa);
     }
-    if(a==0)
-    {
-        printf("A matriz A nao e inversivel! \n\n");
-    }
-    printf("Adjunta: \n");
-    imprimirMatriz(adjA);
+    if(!a)
+        printf("Sua matr%cz n%co %c invers%cvel!!!\n\n",161,198,130,161);
     destruirMatriz(A);
     destruirMatriz(adjA);
-    destruirMatriz(I);
+    destruirMatriz(inversa);
     return EXIT_SUCCESS;
 }

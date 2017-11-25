@@ -11,7 +11,7 @@ int main()
     int n = sizeof(A)/sizeof(double);
     int opcao;
     double (*foo)(double *,double *);
-    printf("Escolha uma das opcoes: \n1-Raiz(A+B).\n2-(A+3*B)\n3-B(ao quadrado)/A.\nOpcao: ");
+    printf("Escolha uma das opcoes: \n1-(A+B)%c.\n2-(A+3B)\n3-B%c%cA.\nOpcao: ",171,253,246);
     scanf("%d",&opcao);
     switch(opcao)
     {
