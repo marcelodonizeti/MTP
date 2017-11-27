@@ -10,7 +10,7 @@ int main()
     double B[] = {0.5, 0.25, 0.125, 0.0625, 0.5, 0.25, 0.125, 0.0625, 0.5, 0.25, 0.125, 0.0625, 0.5, 0.25, 0.125, 0.0625};
     int n = sizeof(A)/sizeof(double);
     int opcao;
-    double (*foo)(double *,double *);
+    void (*foo)(double *,double *);
     printf("Escolha uma das opcoes: \n1-(A+B)%c.\n2-(A+3B)\n3-B%c%cA.\nOpcao: ",171,253,246);
     scanf("%d",&opcao);
     switch(opcao)
