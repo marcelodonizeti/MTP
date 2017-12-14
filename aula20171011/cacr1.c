@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 
 int eprimo(unsigned int numero) {
 	unsigned int i;
@@ -24,7 +23,6 @@ int mostra_soma_primos(unsigned int numero) {
 }
 
 int main() {
-    setlocale(LC_ALL, "Portuguese");
     unsigned int numero, possibilidades;
     printf("Entre com um numero: ");
     scanf("%u", &numero);

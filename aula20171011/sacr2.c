@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h>
-#include <locale.h>
 
 int dado()
 {
@@ -11,7 +10,6 @@ int dado()
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");
     srand(time(0));
     char c;
     int soma=0, numero=0, i=0, j=0;
@@ -30,10 +28,10 @@ int main()
             soma+=numero;
             printf("... %d\n", numero);
         }
-        printf("A soma dos números: %d\n\n", soma);
+        printf("A soma dos numeros: %d\n\n", soma);
         if(soma>17&&soma<24)
         {
-            printf("Você venceu, parabéns!!!\n\n");
+            printf("Voce venceu, parabens!!!\n\n");
             break;
         }
         system("pause");
@@ -43,6 +41,6 @@ int main()
     }
     while(soma<18||soma>23);
     if(j==3)
-    printf("\n\nNão foi dessa vez, você perdeu!\n\n\n");
+    printf("\n\nNao foi dessa vez, voce perdeu!\n\n\n");
     return EXIT_SUCCESS;
 }

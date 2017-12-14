@@ -1,14 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<complex.h>
-double complex fazcomplexo(double a, double b, char c)
+#include <math.h>
+double fazcomplexo(double a, double b, char c)
 {
     if(c=='r'|| c == 'R')
         return a+ I*b;
     else
         return a*cos(b)+I*a*sin(b);
 }
-void mostracomplexo(double complex z,char c)
+void mostracomplexo(double z,char c)
 {
     if(c=='r'||c=='R')
         printf("%lf +I* %lf \n", creal(z),cimag(z));
@@ -17,7 +18,7 @@ void mostracomplexo(double complex z,char c)
 }
 int main()
 {
-    double complex z1, z2;
+    double z1, z2;
     double a,b;
     printf("entre com um numero complexo z1 (real, imaginario):\n");
     scanf("%lf,%lf", &a, &b);
