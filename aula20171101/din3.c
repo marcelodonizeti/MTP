@@ -10,12 +10,7 @@ int main()
     while(!0)
     {
         scanf("%c", str+i);
-        str=(char*)realloc(str, sizeof(char)*1); printf("\n%p\n",str);
-        if(*(str+i)==NULL)
-        {
-            printf("\n\nSem memoria suficiente.\n\n");
-            return EXIT_SUCCESS;
-        }
+        str=(char*)realloc(str, sizeof(char)*1);
         if(*(str+i)== 10)
             break;
         i++;
