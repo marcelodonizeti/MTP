@@ -5,14 +5,10 @@ int main()
 {
     float a,b, resposta;
     double c;
-    printf("Entre com o primeiro lado: \n");
-    scanf("%f", &a);
-    printf("Entre com segundo lado: \n");
-    scanf("%f", &b);
-    printf("Entre com o valor do angulo: \n");
-    scanf("%lf", &c);
+    printf("Entre com o primeiro lado, com o segundo lado e com o valor do angulo: \n");
+    scanf("%f, %f, %lf", &a, &b, &c);
     resposta=sqrt(pow(a,2)+pow(b,2)-2*a*b*cos(c));
-    printf("Lado = %f", resposta);
+    printf("Lado = %g", resposta);
     return 0;
 }
 
